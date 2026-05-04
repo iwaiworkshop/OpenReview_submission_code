@@ -1,0 +1,31 @@
+{
+    "stream": {
+        "description": "Please select the stream you are submitting to:",
+        "order": 2,
+        "value": {
+            "param": {
+                "type": "string",
+                "enum": [
+                    "1. Computational Theory and Simulations",
+                    "2. Cognitive, Philosophical, and Neural Models",
+                    "3. Empirical, Clinical, and Real-World Applications"
+                ],
+                "input": "radio"
+            }
+        }
+    },
+    "type": {
+        "description": "Please select the type of your submission:",
+        "order": 1,
+        "value": {
+            "param": {
+                "type": "string",
+                "enum": [
+                    "1. Full Paper",
+                    "2. Extended Abstract"
+                ],
+                "input": "radio"
+            }
+        }
+    }
+}
