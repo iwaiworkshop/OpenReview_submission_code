@@ -1,0 +1,149 @@
+{
+  "title": {
+    "value": {
+      "param": {
+        "type": "string",
+        "regex": ".{0,500}"
+      }
+    },
+    "order": 1,
+    "description": "Brief summary of your review."
+  },
+  "review": {
+    "value": {
+      "param": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 20000,
+        "input": "textarea",
+        "markdown": true
+      }
+    },
+    "order": 2,
+    "description": "Please provide an evaluation of the quality, clarity, soundness, originality, significance and pertinence of this work to IWAI, including a list of its pros and cons (max 200000 characters). Add formatting using Markdown and formulas using LaTeX. For more information see https://openreview.net/faq"
+  },
+  "soundness": {
+    "value": {
+      "param": {
+        "type": "integer",
+        "enum": [
+          { "value": 5, "description": "5: Excellent, technically flawless, with rigorous methodology, sound theoretical foundations, and thorough validation" },
+          { "value": 4, "description": "4: Good, technically solid with minor issues that do not affect the main conclusions" },
+          { "value": 3, "description": "3: Fair, technically acceptable but with some methodological weaknesses or gaps in validation" },
+          { "value": 2, "description": "2: Poor, significant technical flaws or insufficient rigor that weaken the conclusions" },
+          { "value": 1, "description": "1: Very poor, major technical errors or fundamentally flawed methodology" }
+        ],
+        "input": "radio"
+      }
+    },
+    "order": 3,
+    "description": "Technical quality and rigor of the work."
+  },
+  "originality": {
+    "value": {
+      "param": {
+        "type": "integer",
+        "enum": [
+          { "value": 5, "description": "5: Excellent, highly novel, introducing groundbreaking ideas, methods, or perspectives" },
+          { "value": 4, "description": "4: Good, clearly novel contribution that meaningfully extends prior work" },
+          { "value": 3, "description": "3: Fair, moderately original, with some new ideas combined with existing approaches" },
+          { "value": 2, "description": "2: Poor, limited novelty, mostly incremental over existing work" },
+          { "value": 1, "description": "1: Very poor, not original, largely duplicates or trivially modifies prior work" }
+        ],
+        "input": "radio"
+      }
+    },
+    "order": 4,
+    "description": "Novelty of the work."
+  },
+  "significance": {
+    "value": {
+      "param": {
+        "type": "integer",
+        "enum": [
+          { "value": 5, "description": "5: Excellent, high impact, likely to substantially influence the field or open new research directions" },
+          { "value": 4, "description": "4: Good, clear impact, results are important and useful to a broad audience" },
+          { "value": 3, "description": "3: Fair, moderate impact, results are useful but limited in scope or audience" },
+          { "value": 2, "description": "2: Poor, limited impact, results are unlikely to influence subsequent work" },
+          { "value": 1, "description": "1: Very poor, no discernible impact or relevance to the field" }
+        ],
+        "input": "radio"
+      }
+    },
+    "order": 5,
+    "description": "Potential impact of the work."
+  },
+  "pertinence": {
+    "value": {
+      "param": {
+        "type": "integer",
+        "enum": [
+          { "value": 5, "description": "5: Excellent, perfectly aligned with the conference scope and topics of interest" },
+          { "value": 4, "description": "4: Good, clearly relevant to the conference and of interest to its audience" },
+          { "value": 3, "description": "3: Fair, reasonably relevant, though somewhat tangential to the core topics" },
+          { "value": 2, "description": "2: Poor, marginally relevant, would fit better at a different venue" },
+          { "value": 1, "description": "1: Very poor, not relevant to the conference scope" }
+        ],
+        "input": "radio"
+      }
+    },
+    "order": 6,
+    "description": "Pertinence to the conference."
+  },
+  "presentation": {
+    "value": {
+      "param": {
+        "type": "integer",
+        "enum": [
+          { "value": 5, "description": "5: Excellent, really clear, well-structured, and easy to follow throughout" },
+          { "value": 4, "description": "4: Good, well-written and clearly organized, with only minor issues" },
+          { "value": 3, "description": "3: Fair, adequately written but with notable issues in clarity, structure, or polish" },
+          { "value": 2, "description": "2: Poor, difficult to follow due to unclear writing or poor organization" },
+          { "value": 1, "description": "1: Very poor, severely unclear or disorganized, hindering understanding" }
+        ],
+        "input": "radio"
+      }
+    },
+    "order": 7,
+    "description": "Clarity of writing and overall presentation."
+  },
+  "rating": { 
+    "value": {
+      "param": {
+        "type": "integer",
+        "enum": [
+          { "value": 10, "description": "10: Top 5% of accepted papers, seminal paper" },
+          { "value": 9, "description": "9: Top 15% of accepted papers, strong accept" },
+          { "value": 8, "description": "8: Top 50% of accepted papers, clear accept" },
+          { "value": 7, "description": "7: Good paper, accept" },
+          { "value": 6, "description": "6: Marginally above acceptance threshold" },
+          { "value": 5, "description": "5: Marginally below acceptance threshold" },
+          { "value": 4, "description": "4: Ok but not good enough, rejection" },
+          { "value": 3, "description": "3: Clear rejection" },
+          { "value": 2, "description": "2: Strong rejection" },
+          { "value": 1, "description": "1: Trivial or wrong" }
+        ],
+        "input": "select"
+      }
+    },
+    "order": 8,
+    "description": "Overall recommendation."
+  },
+  "confidence": {
+    "value": {
+      "param": {
+        "type": "integer",
+        "enum": [
+          { "value": 5, "description": "5: The reviewer is absolutely certain that the evaluation is correct and very familiar with the relevant literature" },
+          { "value": 4, "description": "4: The reviewer is confident but not absolutely certain that the evaluation is correct" },
+          { "value": 3, "description": "3: The reviewer is fairly confident that the evaluation is correct" },
+          { "value": 2, "description": "2: The reviewer is willing to defend the evaluation, but it is quite likely that the reviewer did not understand central parts of the paper" },
+          { "value": 1, "description": "1: The reviewer's evaluation is an educated guess" }
+        ],
+        "input": "radio"
+      }
+    },
+    "order": 9,
+    "description": "How confident are you in your assessment?"
+  }
+}
