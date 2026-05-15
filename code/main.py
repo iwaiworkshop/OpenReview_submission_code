@@ -1,5 +1,5 @@
 import openreview
-import config_ivo as c
+import config as c
 import pandas as pd
 import os
 import time
