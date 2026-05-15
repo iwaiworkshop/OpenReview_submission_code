@@ -1,4 +1,3 @@
-# IWAI - OpenReview - 
-### Python helpers
+# IWAI - OpenReview - Python helpers
 ### Contributors: I.Stoianov; ...
 
