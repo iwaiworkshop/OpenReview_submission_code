@@ -35,6 +35,31 @@ def list_of_all_authors():
     pprint.pprint(author_ids)
     print(f"Found {len(author_ids)} unique author IDs.")
 
+def monitor():
+    authP,authA = {},{}; i_p,i_a = 0,0
+    for i,s in enumerate(submissions):
+        subm_id = s.number
+        aid = s.content['authorids']['value']    # List of all authors id's
+        Typ=s.content.get("type")
+        Strm=s.content.get("stream")
+        typ = int(Typ["value"][0]) if not Typ==None else 1 # Fallback for previous IWAI editions without Type.
+        typs = types[typ-1]
+        tit = s.content['title']['value']
+        kws = s.content['keywords']['value']
+        # auth_prof = openreview.tools.get_profiles(client,aid)
+        # auth[s.number]=ais
+        if typ==1:
+            i_p+=1;   authP[s.number]=[i_p,f"#{subm_id}",Strm, tit, aid, kws]
+        else:
+            i_a+=1;   authA[s.number]=[i_a,f"#{subm_id}",Strm, tit, aid, kws]
+        pass
+    print(f" ------------- {i_p} FULL PAPERS -------- ")
+    pprint.pprint(dict(sorted(authP.items())))
+    print(f" ------------- {i_a} EXT ABSTRACTS -------- ")
+    pprint.pprint(dict(sorted(authA.items())))
+    print(f" ----- TOTAL {i_p+i_a}:  {i_p} full papes and {i_a} ext abstracts -----")
+
 
 if __name__ == '__main__':
-    list_of_all_authors()
+    # list_of_all_authors()
+    monitor()
